@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "comp": "../../components/index",
+    "yz-env": "../../components/yz-env/index"
+  }
+}

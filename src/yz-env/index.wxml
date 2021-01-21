@@ -1,0 +1,30 @@
+<!--components/yz-env/index.wxml-->
+<!--可拖动按钮控件表-->
+<!--buttonStart和buttonEnd一定不能用catch事件，否则按钮点击事件会失效-->
+<cover-view wx-if="{{isIos}}" class="btn_Suspension" catchtouchmove="buttonMove" bindtouchstart="buttonStart" bindtouchend="buttonEnd" style="top:{{buttonTop}}px;left:{{buttonLeft}}px;">
+	<picker class="Suspension_picker" 
+	titleText="自定义标题" bindchange="bindPickerChange" value="{{ corner_index }}" range-key="{{ columnsKey }}" range="{{columns}}">
+		 <cover-image class="Suspension_logo" src="https://111-images.oss-cn-shanghai.aliyuncs.com/front-source/1611134817917/02.png"></cover-image>
+		<!--这里是按钮图标，下载地址会在文章底部说明-->
+		<cover-view wx:if="{{corner_data==pro}}"></cover-view>
+		<cover-view wx:else>
+			<cover-view class="cornorMark">
+				<text>{{corner_data}}</text>
+			</cover-view>
+		</cover-view>
+	</picker>
+</cover-view>
+<view wx-if="{{!isIos}}" class="btn_Suspension" catchtouchmove="buttonMove" bindtouchstart="buttonStart" bindtouchend="buttonEnd" style="top:{{buttonTop}}px;left:{{buttonLeft}}px;">
+	<picker class="Suspension_picker" 
+	titleText="自定义标题" bindchange="bindPickerChange" value="{{ corner_index }}" range-key="{{ columnsKey }}" range="{{columns}}">
+		 <image class="Suspension_logo" src="https://111-images.oss-cn-shanghai.aliyuncs.com/front-source/1611134817917/02.png"></image>
+		<!--这里是按钮图标，下载地址会在文章底部说明-->
+		<view wx:if="{{corner_data==pro}}"></view>
+		<view wx:else>
+			<view class="cornorMark">
+				<text>{{corner_data}}</text>
+			</view>
+		</view>
+	</picker>
+</view>
+
